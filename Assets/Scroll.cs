@@ -40,19 +40,31 @@ public class Scroll : MonoBehaviour
         {
             Destroy(currentBackground);
             currentBackground = nextBackground;
-            nextBackgroundPos = new Vector3(0, currentBackground.transform.position.y + spriteLength * 2f, 0);
+            nextBackgroundPos = new Vector3(0, currentBackground.transform.position.y + spriteLength * 2.5f, 0);
             nextBackground = Instantiate(currentBackground, nextBackgroundPos, Quaternion.identity);
+            nextBackground.GetComponent<SpriteRenderer>().flipY = !currentBackground.GetComponent<SpriteRenderer>().flipY;
+            speed *= 1.3f;
         }
 
         if (Time.time > nextMeteor)
         {
-            nextMeteor += Random.Range(0.5f, 1.5f);
+            nextMeteor += Random.Range(0.5f, 2.0f);
             Instantiate(meteor, new Vector2(Random.Range(-6, 6), transform.position.y + 10), Quaternion.identity);
+            if (nextMeteor > 1.2f) {
+                var m2 = Instantiate(meteor, new Vector2(Random.Range(-6, 6), transform.position.y+Random.Range(15,20)), Quaternion.identity);
+                m2.GetComponent<Meteor>().speed += Random.Range(3, 7);
+            }
+        }
+        if (Meteor.counter < 2)
+        {
+            var m2 = Instantiate(meteor, new Vector2(Random.Range(-6, 6), transform.position.y + 10), Quaternion.identity);
+            m2.GetComponent<Meteor>().speed += Random.Range(3, 7);
         }
 
         if (target.transform.position.y < gameObject.transform.position.y - 10)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Meteor.counter = 0;
         }
  
     }

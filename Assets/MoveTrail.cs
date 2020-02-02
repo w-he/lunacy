@@ -79,7 +79,6 @@ public class MoveTrail : MonoBehaviour
     {
         // transform.position = pos;
         // transform.rotation = dir
-        Debug.Log("Move out");
         outThere = true;
         state = hookState.hookingOut;
         spriteRenderer.enabled = true;

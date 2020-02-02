@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Gun : MonoBehaviour
 {
     public bool ready = true;
+    public float bonusSPEED;
     /// <summary>
     // setup layers to select which entities to hit
     /// </summary>
@@ -15,7 +16,7 @@ public class Gun : MonoBehaviour
     public UnityEvent goOut;
 
     public float hookedVelocity;
-    bool hooked = false;
+    public bool hooked = false;
     Transform shootPoint;
     GameObject hookLine;
 
@@ -52,9 +53,10 @@ public class Gun : MonoBehaviour
         {
             // Fire1 should be setup in the input manager else use the following line
             // Edit->Project Settings->Input
-            //if (Input.GetButtonDown("Fire1"))
-            if (Input.GetKeyDown(KeyCode.E))
+            //if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Fire1"))
             {
+                meteor = null;
                 ready = false;
                 Shoot();
             }
@@ -70,6 +72,7 @@ public class Gun : MonoBehaviour
             // cancel hook
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                rb.velocity = new Vector2(rb.velocity.x,bonusSPEED*rb.velocity.y);
                 hookLine.GetComponent<MoveTrail>().takeBack();
                 hooked = false;
             }

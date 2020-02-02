@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     void resetDash()
     {
         //Debug.Log("End Dash");
-        rb.velocity = new Vector2(rb.velocity.x * 0.1f, rb.velocity.y * 0.05f);
+        rb.velocity = new Vector2(rb.velocity.x * 0.1f, rb.velocity.y * 0.1f);
         isDashing = false;
     }
 
@@ -57,21 +57,26 @@ public class PlayerController : MonoBehaviour
 
         // Move the RigidBody2D (which holds the player sprite)
         // on the x axis based on the stae of input and the maxSpeed variable
-        if (Time.time > nextDash && isDashing == false && numDashes > 0)
+        if (Time.time > nextDash && isDashing == false && Input.GetKeyDown("space") && (numDashes > 0 || gun.hooked))
         {
-            if (Input.GetKeyDown("space"))
-            {
-                gun.meteor = null;
-                isDashing = true;
-                //Debug.Log("Dash");
-                numDashes--;
-                nextDash += dashCooldown;
-                rb.velocity = new Vector2(0, 0);
-                rb.angularVelocity = 0;
-                rb.AddRelativeForce(direction * maxSpeed, ForceMode2D.Impulse);
+            gun.meteor = null;
+            isDashing = true;
+            // Debug.Log("Dash");
+            numDashes--;
+            nextDash += dashCooldown;
+            rb.velocity = new Vector2(0, 0);
+            //if ((rb.velocity.x<0 && direction.x >0) || (rb.velocity.x > 0 && direction.x < 0))
+            //{
+            //    rb.velocity = new Vector2(0, rb.velocity.y);
+            //}
+            //if ((rb.velocity.y < 0 && direction.y > 0) || (rb.velocity.y > 0 && direction.y < 0))
+            //{
+            //    rb.velocity = new Vector2(rb.velocity.x,0);
+            //}
+            rb.angularVelocity = 0;
+            rb.AddRelativeForce(direction * maxSpeed, ForceMode2D.Impulse);
 
-                Invoke("resetDash", dashDuration);
-            }
+            Invoke("resetDash", dashDuration);
         }
 
         // Pass in the current velocity of the RigidBody2D

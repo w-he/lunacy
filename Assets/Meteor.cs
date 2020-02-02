@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    private float speed;
+    public static int counter = 0;
+    public float speed;
     private Transform cameraTransform;
     // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
-        speed = Random.Range(0, 0.5f);
+        speed = Random.Range(0, 2f);
+        counter++;
+        Debug.Log(counter);
     }
 
     // Update is called once per frame

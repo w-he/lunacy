@@ -7,6 +7,7 @@ public class GrapplePing : MonoBehaviour
     public float epsilon = 1;
     bool grappled = false;
     bool jumped = false;
+    bool below = true;
     Gun player;
     MoveTrail grapple;
     // Start is called before the first frame update
@@ -31,6 +32,11 @@ public class GrapplePing : MonoBehaviour
             grappled = true;
             grapple.latchOn(transform);
             return;
+        }
+        if (below && player.transform.position.y > transform.position.y)
+        {
+            below = false;
+            Meteor.counter--;
         }
     }
 
