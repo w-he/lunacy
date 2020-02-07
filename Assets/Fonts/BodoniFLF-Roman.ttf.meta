@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: b515376b893424f43bd04f43f8f4e1ee
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 170
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BodoniFLF
+  fontNames:
+  - BodoniFLF
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 680b60558633beb489884d874eb6a38f, type: 3}
+  - {fileID: 12800000, guid: 644b408744946cf4ca45fc3cd3d8e0e4, type: 3}
+  - {fileID: 12800000, guid: 5eea0e6fc1435e940b8a5af408d3758c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

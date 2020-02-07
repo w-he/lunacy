@@ -13,7 +13,7 @@ public class Meteor : MonoBehaviour
         cameraTransform = Camera.main.transform;
         speed = Random.Range(0, 2f);
         counter++;
-        Debug.Log(counter);
+        //Debug.Log(counter);
     }
 
     // Update is called once per frame

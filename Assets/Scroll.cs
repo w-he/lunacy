@@ -35,6 +35,7 @@ public class Scroll : MonoBehaviour
 
     private void Update()
     {
+        speed = 0.75f * (ScoreScript.scoreValue / 100) + 0.5f;
         transform.position += Time.deltaTime * speed * Vector3.up;
         if (nextBackground.transform.position.y < gameObject.transform.position.y)
         {
@@ -43,7 +44,6 @@ public class Scroll : MonoBehaviour
             nextBackgroundPos = new Vector3(0, currentBackground.transform.position.y + spriteLength * 2.5f, 0);
             nextBackground = Instantiate(currentBackground, nextBackgroundPos, Quaternion.identity);
             nextBackground.GetComponent<SpriteRenderer>().flipY = !currentBackground.GetComponent<SpriteRenderer>().flipY;
-            speed *= 1.3f;
         }
 
         if (Time.time > nextMeteor)
@@ -58,7 +58,9 @@ public class Scroll : MonoBehaviour
         if (Meteor.counter < 2)
         {
             var m2 = Instantiate(meteor, new Vector2(Random.Range(-6, 6), transform.position.y + 10), Quaternion.identity);
-            m2.GetComponent<Meteor>().speed += Random.Range(3, 7);
+            m2.GetComponent<Meteor>().speed += Random.Range(5, 9);
+            m2 = Instantiate(meteor, new Vector2(Random.Range(-6, 6), transform.position.y + 10), Quaternion.identity);
+            m2.GetComponent<Meteor>().speed += Random.Range(5, 9);
         }
 
         if (target.transform.position.y < gameObject.transform.position.y - 10)

@@ -8,17 +8,17 @@ public class GrapplePing : MonoBehaviour
     bool grappled = false;
     bool jumped = false;
     bool below = true;
-    Gun player;
+    PlayerController player;
     MoveTrail grapple;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<Gun>();
+        player = GameObject.FindObjectOfType<PlayerController>();
         grapple = GameObject.FindObjectOfType<MoveTrail>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!jumped && dist(player.transform.position) < epsilon)
         {
@@ -27,7 +27,7 @@ public class GrapplePing : MonoBehaviour
             player.jumpOn(this.transform);
             return;
         }
-        else if (!grappled && dist(grapple.transform.position) < epsilon)
+        else if (!grappled && dist(grapple.transform.position) < epsilon && grapple.state != MoveTrail.hookState.hooked)
         {
             grappled = true;
             grapple.latchOn(transform);

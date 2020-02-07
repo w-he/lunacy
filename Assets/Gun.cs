@@ -56,7 +56,6 @@ public class Gun : MonoBehaviour
             //if (Input.GetKeyDown(KeyCode.E))
             if (Input.GetButtonDown("Fire1"))
             {
-                meteor = null;
                 ready = false;
                 Shoot();
             }
@@ -85,6 +84,12 @@ public class Gun : MonoBehaviour
                 vec = vec.normalized * hookedVelocity;
                 rb.velocity = new Vector2(vec.x, vec.y);
             }
+        }
+        else if (meteor != null)
+        {
+            // meteor != null implies standing
+            transform.position = new Vector3(meteor.transform.position.x, meteor.transform.position.y, transform.position.z);
+
         }
     }
 

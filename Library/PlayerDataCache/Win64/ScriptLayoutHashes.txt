@@ -1,8 +1,8 @@
 Win64
 PlayerPath?
-C:/Users/Winnie/Documents/mchacks/fighterman.exe
+D:/lunacy/Current_Build/fighterman.exe
 SceneListBegin?
-C:/Users/Winnie/Documents/mchacks/Echo/Assets/Main scene.unity
+Assets/Scenes/MainScene.unity
 SceneListEnd?
 0515b4dbae4670c5bca53b52ad53fb5a Assembly-CSharp.dll:.LevelGenerator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -50,6 +50,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 0fd6822f6177297bd0eb4d83cc7a9030 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+76110d43fa26e0d5b53159b5e7e93c90 Assembly-CSharp.dll:.ScoreScript
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -117,7 +118,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.NewBehaviourScript
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Meteor
-c7ac255405b710337460569f8e659cec Assembly-CSharp.dll:.PlayerController
+8c036c9a7e644d3349a7cad92c6c0b5e Assembly-CSharp.dll:.PlayerController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.controller
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
