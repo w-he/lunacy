@@ -7,7 +7,7 @@ In this 2d platformer, you aim for the moon until you reach it.
 ## Controls
 
 ### Dashing
-Press *space* and while *holding* any combination of *wasd* to *dash*.
+While *holding* any combination of *wasd*, press *space* to *dash*.
 
 Note: Although pressing *wasd* and *space* at *the same time* could work results may vary.
 
