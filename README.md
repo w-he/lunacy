@@ -8,6 +8,7 @@ In this 2d platformer, you aim for the moon until you reach it.
 
 ### Dashing
 While *holding* any combination of *wasd*, press *space* to *dash*.
+You can only dash _twice_ in the air. Landing on a star will refresh this number.
 
 Note: Although pressing *wasd* and *space* at *the same time* could work results may vary.
 
